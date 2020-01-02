@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+  <title>layui下拉选框</title>
+</head>
+<body>
+  <form class="layui-form" action="">
+  <select name="city" lay-verify="">
+    <option value="">请选择一个城市</option>
+    <option value="010">北京</option>
+    <option value="021">上海</option>
+    <option value="0571">杭州</option>
+  </select> 
+</form>
+</body>
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<script type="text/javascript">
+  //Demo
+layui.use('form', function(){
+  var form = layui.form;
+  
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+});
+</script>
+</html>
