@@ -22,3 +22,17 @@
 
 
 ## api具体使用ORM模型
+
+
+
+##  回顾
+
+## 技术栈回顾
+1. node  http
+2. web框架   express 
+3. mysql 
+4. ORM框架   sequelize
+
+## 技术关键点
+1. api --   web --》 webserver --》 router --》 hander --》 orm实例化 --》 db
+
