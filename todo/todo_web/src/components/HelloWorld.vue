@@ -71,9 +71,6 @@
 import {todoList,update_status} from '@/utils/api';
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  },
   data() {
     return {
       tableData: []
@@ -88,18 +85,17 @@ export default {
       this.tableData = data1.list;
     },
     handleEdit(index, row) {
-      console.log(index, row);
+      this.$parent.editTodo(row)
     },
     handleChange(index, row) {
       let _status = row.status == 1 ? '2' : '1';
-      this.update_status(row.id,_status)
+      this.changestatus(row.id,_status)
     },
     handleDelete(index, row) {
-      console.log(index, row);
-      this.update_status(row.id,3)
+      this.changestatus(row.id,3)
     },
     // 更改状态
-    async update_status(id,status) {
+    async changestatus(id,status) {
       let params = {
         id,
         status

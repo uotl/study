@@ -98,7 +98,8 @@ app.get('/list/:status/:page',async (req,res,next)=>{
     let list = await models.Todo.findAndCountAll({
       where,
       limit,
-      offset
+      offset,
+      'order':[['updatedAt','DESC']]
     })
     res.json({
       list,

@@ -1,16 +1,39 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div style="text-align:left;">
+      <el-button type="primary" @click="addTodo">新增</el-button>
+    </div>
+    <add ref="add"/>
+    <HelloWorld ref="lists"/>
+    <edit ref="edit"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import add from './components/add.vue'
+import edit from './components/edit.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    edit,
+    add
+  },
+  methods:{
+    // 新增todo
+    addTodo() {
+      this.$refs.add.changeStatus();
+    },
+    // 编辑todo
+    editTodo(data) {
+      this.$refs.edit.editTodo(data);
+    },
+    // 刷新list
+    refreshLists() {
+      this.$refs.lists.getLists(-1);
+    }
   }
 }
 </script>
