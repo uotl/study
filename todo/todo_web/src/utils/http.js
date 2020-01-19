@@ -3,7 +3,7 @@ import axios from 'axios';
 if (process.env.NODE_ENV == 'development') {    
   axios.defaults.baseURL = 'http://127.0.0.1:3000';
 } else if (process.env.NODE_ENV == 'production') {    
-  axios.defaults.baseURL = 'https://www.production.com';
+  axios.defaults.baseURL = 'http://127.0.0.1:3000';
 }
 
 axios.defaults.timeout = 10000;
