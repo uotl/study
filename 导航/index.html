@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>导航</title>
+  <link rel="stylesheet" type="text/css" href="css/left-side-menu.css">
+  <link rel="stylesheet" type="text/css" href="font/iconfont.css">
+  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+  <script src="js/jquery.slimscroll.min.js"></script>
+  <script type="text/javascript" src="js/left-side-menu.js"></script>
+</head>
+<body>
+  <div class="top" style="width: 100%;height: 80px;background-color: #397bc5"></div>
+  <div class="left-side-menu">
+    <div class="lsm-expand-btn">
+      <div class="lsm-mini-btn">
+        <label>
+          <input type="checkbox" checked="checked">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="30" />
+            <path class="line--1" d="M0 40h62c18 0 18-20-17 5L31 55" />
+            <path class="line--2" d="M0 50h80" />
+            <path class="line--3" d="M0 60h62c18 0 18 20-17-5L31 45" />
+          </svg>
+        </label>
+      </div>
+    </div>
+    <div class="lsm-container">
+      <div class="lsm-scroll">
+        <div class="lsm-sidebar">
+          <ul>
+            <li class="lsm-sidebar-item">
+              <a href="javascript:;"><i class="my-icon lsm-sidebar-icon icon_1"></i><span>官网</span><i
+                  class="my-icon lsm-sidebar-more"></i></a>
+              <ul>
+                <li><a class="active" href="http://www.yan2piao.com"><span>分秒财税官网</span></a></li>
+                <li><a href="http://scm.med-log.cn/tms-web/dist/index.html"><span>分秒医配运输管理系统</span></a></li>
+                <li><a href="http://www.ypiaotong.com"><span>医票通官网</span></a></li>
+                <li><a href="http://www.med-log.cn"><span>分秒医配官网</span></a></li>
+                <li><a href="http://scm.med-log.com.cn/oms-web_v2/"><span>易手术官网</span></a></li>
+                <li><a href="http://scm.med-log.com.cn/qms-web_v2/#/login/homepage"><span>安心追溯官网</span></a></li>
+                <li><a href="http://wms.med-log.cn/SupplyChainAdvantage/Host.aspx"><span>WMS仓储管理</span></a></li>
+                <!-- <li class="lsm-sidebar-item">
+                  <a href="javascript:;"><i class="my-icon lsm-sidebar-icon "></i><span>二级菜单22</span><i
+                      class="my-icon lsm-sidebar-more"></i></a>
+                  <ul>
+                    <li><a href="javascript:;"><span>血继限界</span></a></li>
+                    <li><a href="javascript:;"><span>秽土转生</span></a></li>
+                    <li><a href="javascript:;"><span>万象天引</span></a></li>
+                    <li><a href="javascript:;"><span>尸鬼封尽</span></a></li>
+                    <li><a href="javascript:;"><span>飞雷神之术</span></a></li>
+                  </ul>
+                </li> -->
+              </ul>
+            </li>
+            <li class="lsm-sidebar-item">
+              <a href="javascript:;"><i class="my-icon lsm-sidebar-icon icon_2"></i><span>开发</span><i
+                  class="my-icon lsm-sidebar-more"></i></a>
+              <ul>
+                <li><a href="https://test.yan2piao.com/2ie-web"><span>医票通测试</span></a></li>
+                <li><a href="https://test.yan2piao.com/ypt-web/#/Login"><span>分秒财税测试页</span></a></li>
+              </ul>
+            </li>
+            <li class="lsm-sidebar-item">
+              <a href="javascript:;"><i class="my-icon lsm-sidebar-icon icon_3"></i><span>监控</span><i
+                  class="my-icon lsm-sidebar-more"></i></a>
+              <ul>
+                <li><a href="http://192.168.1.187/auth/login/?next=/perms/asset-permission/"><span>堡垒机</span></a></li>
+                <li><a href="http://47.105.215.81:10593/zabbix/zabbix.php?action=dashboard.view"><span>迈洛Zabbix</span></a></li>
+                <li><a href="https://shanxi.yan2piao.com/zabbix/zabbix.php?action=dashboard.view"><span>陕西Zabbix</span></a></li>
+              </ul>
+            </li>
+            <li class="lsm-sidebar-item">
+              <a href="javascript:;"><i class="my-icon lsm-sidebar-icon icon-iconset0308"></i><span>网络</span><i
+                  class="my-icon lsm-sidebar-more"></i></a>
+              <ul>
+                <li><a href="http://192.168.1.20"><span>路由器Wxmedlog</span></a></li>
+                <li><a href="http://192.168.1.60"><span>路由器medlog3</span></a></li>
+                <li><a href="http://192.168.1.40"><span>路由器medlog2</span></a></li>
+                <li><a href="http://192.168.1.1"><span>防火墙</span></a></li>
+              </ul>
+            </li>
+            <li class="lsm-sidebar-item">
+              <a href="javascript:;"><i class="my-icon lsm-sidebar-icon icon-chongzhi1"></i><span>陕西</span><i
+                  class="my-icon lsm-sidebar-more"></i></a>
+              <ul>
+                <li><a href="https://shanxi.yan2piao.com/#/Login"><span>医票通</span></a></li>
+              </ul>
+            </li>
+            <li class="lsm-sidebar-item">
+              <a href="javascript:;"><i class="my-icon lsm-sidebar-icon icon-chongzhi"></i><span>华为</span><i
+                  class="my-icon lsm-sidebar-more"></i></a>
+              <ul>
+                <li><a href="https://huawei.yan2piao.com/#/Login"><span>医票通</span></a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="box-content">
+      <iframe src="" frameborder="0" class="iframe-box" style='overflow-x:hidden'></iframe>
+  </div>
+</body>
+<script>
+  // setTimeout(() => {
+  //   $('.iframe-box').attr("src",'https://www.baidu.com/');
+  // }, 1000);
+</script>
+
+</html>
