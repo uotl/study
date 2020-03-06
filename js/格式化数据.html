@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  var data = {
+    陕西省第四人民医院: {failNum: 1, failPercent: "100.0%", sucNum: 0, sucPercent: "0.0%", totalNum: 1},
+    陕西省第四人民医院2: {failNum: 1, failPercent: "100.0%", sucNum: 0, sucPercent: "0.0%", totalNum: 1}
+  }
+  
+  var resLists = [];
+  for(var i in data){
+    var _arr = [];
+    console.log(i);
+    data[i].hpName = i;
+    console.log(data[i]);
+    resLists.push(data[i])
+  }
+  console.log(resLists);
+  
+</script>
+</html>

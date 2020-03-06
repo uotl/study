@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>升国旗</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+  }
+  .box{
+    text-align: center;
+    position: relative;
+    margin-top: 100px;
+  }
+  .bg{
+    height: 100%;
+    margin: 0 auto;
+  }
+  #flag{
+    width: 160px;
+    position: absolute;
+    bottom: 200px;
+    left: 48.3%;
+    transition-delay: 2s;    
+  }
+</style>
+<body>
+  <div class="box">
+    <!-- 背景 -->
+    <img src="./images/bg.jpg" alt="" class="bg">
+    <!-- 国旗 -->
+    <img src="./images/timg.gif" alt="" class="flag" id="flag">
+  </div>
+</body>
+<script>
+  
+  var wrapEle = document.querySelector('.bg');
+  var audio = document.createElement('audio');
+  audio.src = './music/gg.mp3'//这里放音乐的地址
+  document.body.appendChild(audio)
+  wrapEle.onclick = function() {
+    audio.play();
+    document.getElementById("flag").style.transition = 'all linear 46s 1s';
+    document.getElementById("flag").style.bottom = "612px";
+  }
+</script>
+</html>
