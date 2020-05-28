@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="https://www.layuicdn.com/layui/css/layui.css" />
+  <title>layui下拉选框</title>
+</head>
+<body>
+  <form class="layui-form" action="">
+  <select name="city" lay-verify="">
+    <option value="">请选择一个城市</option>
+    <option value="010">北京</option>
+    <option value="021">上海</option>
+    <option value="0571">杭州</option>
+  </select> 
+</form>
+<input type="text" class="layui-input" id="test1">
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.min.js"></script>
+<script src="https://www.layuicdn.com/layui/layui.js"></script>
+<script type="text/javascript">
+  //Demo
+// layui.use(['form','laydate'], function(){
+layui.use(['laydate','form'], function(){
+  var form = layui.form;
+  var laydate = layui.laydate;
+  var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+  
+  //监听提交
+  form.on('submit(formDemo)', function(data){
+    layer.msg(JSON.stringify(data.field));
+    return false;
+  });
+
+  laydate.render({
+    elem: '#test1' //指定元素
+    ,format: 'yyyy-MM-dd'
+    ,value: date
+  });
+  console.log($('#test1').val());
+  
+  
+  
+});
+</script>
+</html>

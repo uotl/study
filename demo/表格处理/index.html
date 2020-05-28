@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="file" class="iptFile">
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+<script type="text/javascript" src="./js/xlsx.core.min.js"></script>
+<script type="text/javascript" src="./js/xlsx.full.min.js"></script>
+<script>
+  $('.iptFile').change((data)=>{
+    var file = data.target.files[0];
+    console.log(data);
+    console.log(file);
+    readWorkbookFromLocalFile(file)
+    
+  })
+
+  function readWorkbookFromLocalFile(file) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      var data = e.target.result;
+      var workbook = XLSX.read(data, {type: 'binary'});
+      console.log(workbook);
+    };
+    reader.readAsBinaryString(file);
+  }
+</script>
+</html>

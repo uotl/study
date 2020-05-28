@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>原型链</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function Person(){
+
+  }
+  Person.prototype.name = 'Blues';
+
+  let person = new Person();
+
+  console.log('person.name');
+  console.log(person.name);
+  
+  console.log('person.__proto__');
+  console.log(person.__proto__);
+
+  console.log('Person.prototype');
+  console.log(Person.prototype);
+
+  console.log('person.__proto__ === Person.prototype');
+  console.log(person.__proto__ === Person.prototype);
+  
+  console.log('Person.prototype.__proto__');
+  console.log(Person.prototype.__proto__);
+
+  console.log('Object.prototype');
+  console.log(Object.prototype);
+
+  console.log('Person.prototype.__proto__ === Object.prototype')
+  console.log(Person.prototype.__proto__ === Object.prototype)
+  
+  
+  
+</script>
+</html>

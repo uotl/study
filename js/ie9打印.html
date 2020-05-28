@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IE9打印</title>
+</head>
+<body>
+  <div id="box">123123123123123123123123123123123123123123123123123123123123123123123123123123123123</div>
+</body>
+<script>
+  function printDiv() {
+    var divToPrint = document.getElementById('box');
+    newWin= window.open();
+    newWin.document.write(divToPrint.innerHTML);
+    newWin.document.close();
+    newWin.focus();
+    newWin.print();
+    newWin.close();
+}
+
+document.getElementById('box').onclick = function() {
+  printDiv();
+}
+</script>
+</html>

@@ -1,14 +1,11 @@
 const http = require('http');
-const url = require('url');
 
-http.createServer((req,res)=>{
-  let path,get,post
-  if(req.method == 'GET'){
-    let {pathname, query} = url.parse(req.url,true)
-    path = pathname;
-    get = query;
-    
-  }else if(req.method == 'POST'){
+const server = http.createServer((req,res) => {
+  res.writeHead(200,{
+    "Content-type":"text/html;charset=UTF-8"
+  })
+  res.end('NODEJS')
+})
 
-  }
-}).listen(8080)
+server.listen(3000)
+console.log('localhost:3000')
