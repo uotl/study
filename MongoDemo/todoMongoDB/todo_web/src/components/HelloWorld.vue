@@ -5,9 +5,8 @@
     :data="tableData"
     style="width: 100%;">
     <el-table-column
-      prop="index"
-      label="序号"
-      width="80">
+      type="index"
+      width="50">
     </el-table-column>
     <el-table-column
       prop="name"
@@ -30,7 +29,7 @@
     </el-table-column>
     <el-table-column
       prop="deadline"
-      label="截止日期"
+      label="创建日期"
       width="220"
     >
     </el-table-column>
@@ -82,6 +81,9 @@ export default {
   methods: {
     async getLists (status) {
       let data1 = await todoList('/'+status+'/1')
+      data1.data.forEach(item => {
+        item.deadline = item.deadline.split(' ')[0]
+      })
       this.tableData = data1.data;
     },
     handleEdit(index, row) {
@@ -89,10 +91,12 @@ export default {
     },
     handleChange(index, row) {
       let _status = row.status == 1 ? '2' : '1';
-      this.changestatus(row.id,_status)
+      console.log(row);
+      
+      this.changestatus(row._id,_status)
     },
     handleDelete(index, row) {
-      this.changestatus(row.id,3)
+      this.changestatus(row._id,3)
     },
     // 更改状态
     async changestatus(id,status) {
@@ -115,10 +119,10 @@ export default {
         return '待办'
       }
       if(row.status == 2){
-        return '完成'
+        return '已完成'
       }
       if(row.status == 3){
-        return '删除'
+        return '已删除'
       }
     },
     filterHandler(value, row, column) {

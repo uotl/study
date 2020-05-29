@@ -22,57 +22,35 @@ const todoController = require('../controller/index')
 app.post('/create',todoController.create)
 // 查询list
 app.get('/list/:status/:page',todoController.list)
-// 编辑
-app.get('/list/:status/:page',todoController.update)
+// 编辑内容
+app.post('/update',todoController.update)
+// 编辑状态
+app.post('/update_status',todoController.updateStatus)
 
-// 编辑
-app.post('/update',async (req,res,next)=>{
-  try {
-    let {name, deadline, content, id, status} = req.body;
-    let todo = await models.Todo.findOne({
-      where:{
-        id
-      }
-    })
-    if(todo){
-      // 有数据才更新
-      todo = await todo.update({
-        name,
-        deadline,
-        status,
-        content
-      })
-    }
-    res.json({
-      todo
-    })
-  } catch (error) {
-    next(error)
-  }
-})
+
 
 // 修改状态   -1全部  1待办  2完成  3删除
-app.post('/update_status',async (req,res,next)=>{
-  try {
-    let {id, status} = req.body;
-    let todo = await models.Todo.findOne({
-      where:{
-        id
-      }
-    })
-    if(todo && status != todo.status){
-      // 有数据才更新
-      todo = await todo.update({
-        status
-      })
-    }
-    res.json({
-      todo
-    })
-  } catch (error) {
-    next(error)
-  }
-})
+// app.post('/update_status',async (req,res,next)=>{
+//   try {
+//     let {id, status} = req.body;
+//     let todo = await models.Todo.findOne({
+//       where:{
+//         id
+//       }
+//     })
+//     if(todo && status != todo.status){
+//       // 有数据才更新
+//       todo = await todo.update({
+//         status
+//       })
+//     }
+//     res.json({
+//       todo
+//     })
+//   } catch (error) {
+//     next(error)
+//   }
+// })
 
 
 

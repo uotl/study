@@ -16,7 +16,7 @@ const db = mongoose.connect('mongodb://localhost/todolists')
 const model = mongoose.model('list',{
   name:String,
   content:String,
-  deadline:{ type: Date, default: Date.now },
+  deadline:{ type: String, default: Date.now },
   status:{ type: Number, default: 1 }
 })
 
@@ -35,13 +35,26 @@ const listsModel = (skip)=> {
   }) 
 }
 
-const updateModel = ()=>{
+const updateModel = (postdata)=>{
+  return model.update({_id:postdata._id},postdata)
+  .then(res => {
+    return res
+  })
+}
+
+const updateStatusModel = (postdata)=>{
+  console.log(postdata);
   
+  return model.update({_id:postdata.id},{$set: { status: postdata.status }})
+  .then(res => {
+    return res
+  })
 }
 
 module.exports = {
   createModel,
   listsModel,
-  updateModel
+  updateModel,
+  updateStatusModel
 }
 

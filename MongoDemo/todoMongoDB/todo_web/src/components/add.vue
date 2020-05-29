@@ -12,7 +12,7 @@
           </el-form-item>
           <el-form-item label="活动时间">
             <el-col :span="24">
-              <el-date-picker type="date" placeholder="选择日期" v-model="form.deadline" style="width: 100%;"></el-date-picker>
+              <el-date-picker type="date" value-format="yyyy-MM-dd HH:mm:ss" placeholder="选择日期" v-model="form.deadline" style="width: 100%;"></el-date-picker>
             </el-col>
           </el-form-item>
           <el-form-item label="活动内容">

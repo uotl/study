@@ -1,12 +1,12 @@
 const {
   createModel,
   updateModel,
-  listsModel
+  listsModel,
+  updateStatusModel
 } = require('../models/index')
 
 const create = async (req,res)=> {
   let postdata = req.body;
-  // { status: '-1', page: '1' }
   let rs = await createModel(postdata)
   if(rs){
     res.send({
@@ -29,11 +29,34 @@ const list = async (req,res)=> {
 }
 
 const update = async (req,res)=> {
-  
+  let postdata = req.body;
+  let rs = await updateModel(postdata)
+  if(rs){
+    res.send({
+      postdata,
+      message:"编辑成功"
+    })
+  }else{
+    res.send('编辑失败')
+  }
+}
+
+const updateStatus = async (req,res)=>{
+  let postdata = req.body;
+  let rs = await updateStatusModel(postdata)
+  if(rs){
+    res.send({
+      postdata,
+      message:"编辑成功"
+    })
+  }else{
+    res.send('编辑失败')
+  }
 }
 
 module.exports = {
   create,
   update,
-  list
+  list,
+  updateStatus
 } 
